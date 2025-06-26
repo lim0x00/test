@@ -17,7 +17,7 @@ class ZhipuAIEmbeddings(Embeddings):
         from zhipuai import ZhipuAI
         #self.client = ZhipuAI()
         if api_key is None:
-            api_key = os.environ.get("ZHIPUAI_API_KEY")
+           api_key = os.environ.get("ZHIPUAI_API_KEY")
         self.client = ZhipuAI(api_key=api_key)
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
