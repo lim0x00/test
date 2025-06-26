@@ -18,7 +18,7 @@ from langchain_community.vectorstores import Chroma
 from zhipuai_llm import ZhipuaiLLM  # 添加对 ZhipuaiLLM 的导入
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
-from zhipuai_llm import ZhipuaiLL
+
 
 def get_retriever():
     # 定义 Embeddings
