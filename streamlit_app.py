@@ -1,14 +1,11 @@
 import sys
 import os
 
-if "pysqlite3" in sys.modules:
-    sys.modules["sqlite3"] = sys.modules["pysqlite3"]
-else:
-    try:
-        import pysqlite3
-        sys.modules["sqlite3"] = pysqlite3
-    except ImportError:
-        pass
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass
 
 import streamlit as st
 #from langchain_openai import ChatOpenAI
