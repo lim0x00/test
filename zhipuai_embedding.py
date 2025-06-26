@@ -15,7 +15,10 @@ class ZhipuAIEmbeddings(Embeddings):
             values (Dict): 包含配置信息的字典。如果环境中有zhipuai库，则将返回实例化的ZhipuAI类；否则将报错 'ModuleNotFoundError: No module named 'zhipuai''.
         """
         from zhipuai import ZhipuAI
-        self.client = ZhipuAI()
+        #self.client = ZhipuAI()
+        if api_key is None:
+            api_key = os.environ.get("ZHIPUAI_API_KEY")
+        self.client = ZhipuAI(api_key=api_key)
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """
