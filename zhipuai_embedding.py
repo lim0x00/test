@@ -1,5 +1,6 @@
 from typing import List
 from langchain_core.embeddings import Embeddings
+from zhipuai import ZhipuAI
 
 class ZhipuAIEmbeddings(Embeddings):
     """`Zhipuai Embeddings` embedding models."""
