@@ -45,7 +45,7 @@ class ZhipuaiLLM(BaseChatModel):
 
         messages = [_convert_message_to_dict(message) for message in messages]
         start_time = time.time()
-        response = ZhipuAI(api_key=self.api_key).chat.completions.create(
+        response = ZhipuAI(api_key=api_key="5e2f86a9b4ff4fc18ea91a27b6d75f44.EUqfoye5UUqBUucm").chat.completions.create(
             model=self.model_name,
             temperature=self.temperature,
             max_tokens=self.max_tokens,
