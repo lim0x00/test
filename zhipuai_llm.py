@@ -84,7 +84,7 @@ class ZhipuaiLLM(BaseChatModel):
             run_manager: 一个为LLM提供回调的运行管理器
         """
         messages = [_convert_message_to_dict(message) for message in messages]
-        response = ZhipuAI().chat.completions.create(
+        response = ZhipuAI(api_key=self.api_key).chat.completions.create(
             model=self.model_name,
             stream=True,
             temperature=self.temperature,
