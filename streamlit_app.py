@@ -37,7 +37,8 @@ def combine_docs(docs):
 
 def get_qa_history_chain():
     retriever = get_retriever()
-    api_key = os.environ.get("ZHIPUAI_API_KEY")
+    #api_key = os.environ.get("ZHIPUAI_API_KEY")
+    api_key = "5e2f86a9b4ff4fc18ea91a27b6d75f44.EUqfoye5UUqBUucm"
     llm = ZhipuaiLLM(model_name="glm-4", api_key=api_key, temperature=0)
     condense_question_system_template = (
         "请根据聊天记录总结用户最近的问题，"
